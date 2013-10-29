@@ -1,0 +1,5 @@
+C:\Users\Krasi\Documents\Visual Studio 2008\Projects\connectToSQL\connectToSQL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Krasi\Documents\Visual Studio 2008\Projects\connectToSQL\connectToSQL\bin\Debug\connectToSQL.exe
+C:\Users\Krasi\Documents\Visual Studio 2008\Projects\connectToSQL\connectToSQL\bin\Debug\connectToSQL.pdb
+C:\Users\Krasi\Documents\Visual Studio 2008\Projects\connectToSQL\connectToSQL\obj\Debug\connectToSQL.exe
+C:\Users\Krasi\Documents\Visual Studio 2008\Projects\connectToSQL\connectToSQL\obj\Debug\connectToSQL.pdb
