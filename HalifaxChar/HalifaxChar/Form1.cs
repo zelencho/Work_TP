@@ -14,6 +14,7 @@ namespace HalifaxChar
     public partial class Form1 : Form
     {
         public string str = "1je4na";
+        int[] randomCharPositions = new int[3];
        
     //    public  char[] charListArray = new char[2];
 
@@ -24,38 +25,73 @@ namespace HalifaxChar
         }
          public void randomNumbers()
         {
+           
+                // compare the random numbers to the values entered by the user
+
+               randomCharPositions[0] = str[0];
+                randomCharPositions[1] = str[1];
+                randomCharPositions[2] = str[2];
+
+               char one = Convert.ToChar(comboBoxCharOne.SelectedItem);
+               char two = Convert.ToChar(comboBoxCharTwo.SelectedItem);
+               char three = Convert.ToChar(comboBoxCharThree.SelectedItem);
+
+                if (randomCharPositions[0] == one && randomCharPositions[1] == two && randomCharPositions[2] == three)
+                {
+                    MessageBox.Show("Well Done!!!",  "Perfect Match.");
+                }
+                else
+                {
+                    MessageBox.Show("The entered characters do not exist!! /n Please try again.");
+                    onFormLoad();
+                }
+        }
+
+         /* public void getChars(char one, char two, char three)
+         {
+             one = Convert.ToChar(comboBoxCharOne.Text);
+             two = Convert.ToChar(comboBoxCharTwo.Text);
+             three = Convert.ToChar(comboBoxCharThree);
+
+             for (int i = 0; i < getStrLenght(); i++)
+             {
+                 one = str[i];
+             }
+         } */
+
+         public Form1()
+        {
+            InitializeComponent();
+            onFormLoad();
+         }
+         public void cleanEnteredComboBoxValues()
+         {
+             comboBoxCharOne.Text = " ";
+             comboBoxCharTwo.Text = " ";
+             comboBoxCharThree.Text = " ";
+         }
+        public void onFormLoad()
+        {
             Random rnd = new Random();
             int ranNum;
 
-            int[] randomCharPositions = new int[3];
-
-            for (int i = 0;  i < randomCharPositions.Length; i++)
+            for (int i = 0; i < randomCharPositions.Length; i++)
             {
                 ranNum = rnd.Next(1, getStrLenght() + 1); // the 1 should ensure that the Random number is not 0
-                                                         // the + 1 should ensure that the value from the lenght is taken
+                // the + 1 should ensure that the value from the lenght is taken
                 randomCharPositions[i] = ranNum;
-                if (randomCharPositions[i] > 0 && randomCharPositions[i - 1] == ranNum) i--;
+                if (i > 0 && randomCharPositions[i - 1] == ranNum)
+                {
+                    i--;
+                    continue;
+                }
             }
-             
-             // need to ensure that the values in the array are unique
-            var allSame = Array.TrueForAll(randomCharPositions, x => x == randomCharPositions[0]);
+            // assign the random numbers to the labels
+            charOne.Text = randomCharPositions[0].ToString();
+            charTwo.Text = randomCharPositions[1].ToString();
+            charThree.Text = randomCharPositions[2].ToString();
 
-            if(allSame)
-            {
-                MessageBox.Show("Values in the array are the same. Need to rerun");
-                randomNumbers();
-            }
-            else
-            {
-                charOne.Text = randomCharPositions[0].ToString();
-                charTwo.Text = randomCharPositions[1].ToString();
-                charThree.Text = randomCharPositions[2].ToString();
-            }
-        }
-        
-        public Form1()
-        {
-            InitializeComponent();
+            cleanEnteredComboBoxValues();
         }
 
         private void label2_Click(object sender, EventArgs e)

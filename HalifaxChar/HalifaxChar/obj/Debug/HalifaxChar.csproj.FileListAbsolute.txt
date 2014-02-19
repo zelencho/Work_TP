@@ -7,3 +7,12 @@ c:\users\krasi\documents\visual studio 2013\Projects\HalifaxChar\HalifaxChar\obj
 c:\users\krasi\documents\visual studio 2013\Projects\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.csproj.GenerateResource.Cache
 c:\users\krasi\documents\visual studio 2013\Projects\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.exe
 c:\users\krasi\documents\visual studio 2013\Projects\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.pdb
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\bin\Debug\HalifaxChar.exe.config
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.exe
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.pdb
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\bin\Debug\HalifaxChar.exe
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\bin\Debug\HalifaxChar.pdb
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.Form1.resources
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\Work_TP\HalifaxChar\HalifaxChar\obj\Debug\HalifaxChar.csproj.GenerateResource.Cache
