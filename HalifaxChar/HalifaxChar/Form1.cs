@@ -13,53 +13,55 @@ namespace HalifaxChar
 {
     public partial class Form1 : Form
     {
-        public string str = "1je4na";
-        int[] randomCharPositions = new int[3];
-       
-    //    public  char[] charListArray = new char[2];
+        public string str = " 1je4na"; // add space to set str[0] = nothing and no need to select 0
+       // public  int[] randomCharPositions = new int[3];
+        int lblCharOneValue, lblCharTwoValue, lblCharThreeValue;
 
        public int getStrLenght()
         {        
             int len = str.Length;
             return len;
         }
-         public void randomNumbers()
+         public void runInputCharCheck()
         {
-           
-                // compare the random numbers to the values entered by the user
-
-               randomCharPositions[0] = str[0];
-                randomCharPositions[1] = str[1];
-                randomCharPositions[2] = str[2];
-
+                //get the userinput from the drop down boxes and convert them to chars as default for comboBox is string
                char one = Convert.ToChar(comboBoxCharOne.SelectedItem);
                char two = Convert.ToChar(comboBoxCharTwo.SelectedItem);
                char three = Convert.ToChar(comboBoxCharThree.SelectedItem);
 
-                if (randomCharPositions[0] == one && randomCharPositions[1] == two && randomCharPositions[2] == three)
+               //get the randomly generated numbers and pull the exact char from the str string
+               lblCharOneValue = Convert.ToInt16(charOne.Text);
+               lblCharTwoValue = Convert.ToInt16(charTwo.Text);
+               lblCharThreeValue = Convert.ToInt16(charThree.Text);
+             
+               // compare the random numbers to the values entered by the user
+               if (str[lblCharOneValue] == one && str[lblCharTwoValue] == two && str[lblCharThreeValue] == three)
                 {
-                    MessageBox.Show("Well Done!!!",  "Perfect Match.");
+                   DialogResult dialogYesNoFeedback = MessageBox.Show("Well Done!!!" + "\n" + "Would you like to try again?",  "Perfect Match.", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    
+                   if(dialogYesNoFeedback == DialogResult.Yes)
+                   {
+                       onFormLoad();
+                   }
+                   else if(dialogYesNoFeedback == DialogResult.No)
+                   {
+                       Environment.Exit(1);
+                   }
                 }
                 else
                 {
-                    MessageBox.Show("The entered characters do not exist!! /n Please try again.");
-                    onFormLoad();
+                    DialogResult retryCancelDialogFeedback = MessageBox.Show("The entered characters do not exist!!" + "\n" + "Soo, what is next.....", "Wrong", MessageBoxButtons.RetryCancel);
+                    switch(retryCancelDialogFeedback)
+                    {
+                        case DialogResult.Retry: onFormLoad();
+                            break;
+                        case DialogResult.Cancel: Environment.Exit(1);
+                            break;
+                    }
                 }
         }
 
-         /* public void getChars(char one, char two, char three)
-         {
-             one = Convert.ToChar(comboBoxCharOne.Text);
-             two = Convert.ToChar(comboBoxCharTwo.Text);
-             three = Convert.ToChar(comboBoxCharThree);
-
-             for (int i = 0; i < getStrLenght(); i++)
-             {
-                 one = str[i];
-             }
-         } */
-
-         public Form1()
+        public Form1()
         {
             InitializeComponent();
             onFormLoad();
@@ -73,11 +75,12 @@ namespace HalifaxChar
         public void onFormLoad()
         {
             Random rnd = new Random();
+            int[] randomCharPositions = new int[3];
             int ranNum;
 
             for (int i = 0; i < randomCharPositions.Length; i++)
             {
-                ranNum = rnd.Next(1, getStrLenght() + 1); // the 1 should ensure that the Random number is not 0
+                ranNum = rnd.Next(1, getStrLenght()); // the 1 should ensure that the Random number is not 0
                 // the + 1 should ensure that the value from the lenght is taken
                 randomCharPositions[i] = ranNum;
                 if (i > 0 && randomCharPositions[i - 1] == ranNum)
@@ -90,7 +93,8 @@ namespace HalifaxChar
             charOne.Text = randomCharPositions[0].ToString();
             charTwo.Text = randomCharPositions[1].ToString();
             charThree.Text = randomCharPositions[2].ToString();
-
+           
+            //randomNumbers();
             cleanEnteredComboBoxValues();
         }
 
@@ -100,7 +104,7 @@ namespace HalifaxChar
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            randomNumbers();
+            runInputCharCheck();
         }
     }
 }

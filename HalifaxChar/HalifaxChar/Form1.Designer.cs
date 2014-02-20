@@ -83,7 +83,7 @@
             "9"});
             this.comboBoxCharOne.Location = new System.Drawing.Point(43, 144);
             this.comboBoxCharOne.Name = "comboBoxCharOne";
-            this.comboBoxCharOne.Size = new System.Drawing.Size(27, 21);
+            this.comboBoxCharOne.Size = new System.Drawing.Size(47, 21);
             this.comboBoxCharOne.TabIndex = 0;
             // 
             // comboBoxCharTwo
@@ -128,7 +128,7 @@
             "9"});
             this.comboBoxCharTwo.Location = new System.Drawing.Point(229, 144);
             this.comboBoxCharTwo.Name = "comboBoxCharTwo";
-            this.comboBoxCharTwo.Size = new System.Drawing.Size(26, 21);
+            this.comboBoxCharTwo.Size = new System.Drawing.Size(47, 21);
             this.comboBoxCharTwo.TabIndex = 1;
             // 
             // comboBoxCharThree
@@ -173,8 +173,9 @@
             "9"});
             this.comboBoxCharThree.Location = new System.Drawing.Point(414, 144);
             this.comboBoxCharThree.Name = "comboBoxCharThree";
-            this.comboBoxCharThree.Size = new System.Drawing.Size(30, 21);
+            this.comboBoxCharThree.Size = new System.Drawing.Size(47, 21);
             this.comboBoxCharThree.TabIndex = 2;
+           // this.comboBoxCharThree.Font.Size = 20;
             // 
             // label1
             // 
